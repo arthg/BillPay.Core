@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  billpayapi.core:
+    image: billpayapi.core
+    build:
+      context: ./BillPayApi.Core
+      dockerfile: Dockerfile
