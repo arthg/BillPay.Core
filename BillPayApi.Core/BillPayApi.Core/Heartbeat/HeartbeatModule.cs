@@ -1,12 +1,9 @@
 ﻿using Nancy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BillPayApi.Core.Home
+namespace BillPayApi.Core.Heartbeat
 {
-    public class HeartbeatModule : NancyModule
+    // ReSharper disable once UnusedMember.Global
+    public sealed class HeartbeatModule : NancyModule
     {
         public HeartbeatModule()
             : base("heartbeat")

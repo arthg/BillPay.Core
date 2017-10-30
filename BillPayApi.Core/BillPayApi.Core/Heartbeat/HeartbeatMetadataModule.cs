@@ -1,14 +1,11 @@
-﻿using Nancy.Metadata.Modules;
+﻿using System.Net;
+using Nancy.Metadata.Modules;
 using Nancy.Swagger;
 using Swagger.ObjectModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BillPayApi.Core.Heartbeat
-{
-    
+{  
+    // ReSharper disable once UnusedMember.Global
     public class HeartbeatMetadataModule : MetadataModule<PathItem>
     {
         public HeartbeatMetadataModule()
@@ -18,6 +15,7 @@ namespace BillPayApi.Core.Heartbeat
                 op => op.OperationId("GetHeartbeat")
                         .Tag("Heartbeat")
                         .Summary("Heartbeat")
+                        .Response(HttpStatusCode.OK, r => r.Description("The blah blah blah"))
                         .Description("This returns status code 200 and some blah blah blah when the service is alive and heart is beating")));
         }
     }
