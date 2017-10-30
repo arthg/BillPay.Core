@@ -10,7 +10,14 @@ namespace BillPayApi.Core.Home
     {
         public HomeModule()
         {
-            Get("/", args => "Super Duper Happy Path running on .NET Core");
+            Get("/", _ => GetPetStoreUrl(), null, "Home");
+        }
+
+        private Response GetPetStoreUrl()
+        {
+            var port = Request.Url.Port ?? 80;
+            return Response.AsRedirect($"http://petstore.swagger.io/?url=http://localhost:{port}/api-docs");
         }
     }
 }
+
